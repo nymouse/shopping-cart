@@ -1,0 +1,21 @@
+<h1> Create Products</h1>
+<p>{{error}}</p>
+<form action='/products/createP', method='POST', enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="title">Title Products</label>
+    <input type="text" class="form-control" name="title">
+  </div>
+  <div class="form-group">
+    <label for="description">Description Products</label>
+    <input type="text" class="form-control" name="description">
+  </div>
+  <div class="form-group">
+    <label for="price">Price Products</label>
+    <input type="number" class="form-control" name="price">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlFile1">Image Products</label>
+    <input type="file" name="imagepath" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
