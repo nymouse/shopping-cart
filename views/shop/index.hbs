@@ -1,3 +1,10 @@
+<div class="row d-flex justify-content-center">
+	<div class="col-sm-6 col-md-6 ">
+		<div id="success" class="alert alert-success text-center"{{#if noMsg}}style="display: none"{{/if}}>
+			{{msgSuccess}}
+		</div>
+	</div>
+</div>
 {{# each products}}
 	<div class="row">
 		{{# each this}}
@@ -8,7 +15,7 @@
 						<h5 class="card-title">{{this.title}}</h5>
 						<p class="card-text">{{this.description}}</p>
 						<span class="font-weight-bold">${{this.price}}</span>
-						<a href="#" class="btn btn-primary float-right">Add to cart</a>
+						<a href="/products/add-to-cart/{{this._id}}" class="btn btn-primary float-right" role="button">Add to cart</a>
 					</div>
 				</div>
 			</div>

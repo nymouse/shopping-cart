@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="/">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,16 +7,33 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Shopping cart</a>
+        <a href="/products" class="nav-link">
+          <i class="fab fa-product-hunt"></i> Products
+        </a>
+      </li>
+       <li class="nav-item">
+        <a href="/products/createP" class="nav-link">
+          <i class="fab fa-accusoft"></i> PostProducts
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/products/shop-cart"><i class="fas fa-shopping-cart"></i>
+         Shopping cart
+         <span class="badge badge-primary badge-pill">{{session.cart.totalQlt}}</span>
+       </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-secret"></i> User manager
         </a>
         <div class="dropdown-menu dropdown-menu-lg-right mr-2" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Login</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          {{# if login}}
+            <a class="dropdown-item" href="/user/profile">User Profile</a>
+            <a class="dropdown-item" href="/user/logout">Logout</a>
+          {{else}}
+            <a class="dropdown-item" href="/user/signup">Sign Up</a>
+            <a class="dropdown-item" href="/user/signin">Sign In</a>
+          {{/if}}
         </div>
       </li>
     </ul>
